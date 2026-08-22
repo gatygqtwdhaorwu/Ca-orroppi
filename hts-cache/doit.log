@@ -1,0 +1,8 @@
+https://mimmostore.org/ -O /data/data/com.termux/files/home/mimmostore_full +*.mimmostore.org/* +mimmostore.org/* +https://mimmostore.org/* -s1
+File generated automatically on Sat, 22 Aug 2026 19:50:00, do NOT edit
+
+To update a mirror, just launch httrack without any parameters
+The existing cache will be used (and modified)
+To have other options, retype all parameters and launch HTTrack
+To continue an interrupted mirror, just launch httrack without any parameters
+
