@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+mimmostore.org	TRUE	/	FALSE	1999999999	__cf_bm	p1YuQ1OtVSawRPkVC8.u5iXxfy6f7K17f6fuHodBWnY-1787421903.5378683-1.0.1.1-CoAH3cZ7dZwGtpa.FqRw6I4Hwc1HJceP4_iwtDhjB9zDiEaYTB5JaXKuQZDx2ixooRI1PYHTAQ60g1gLWgqdmsPj9Jp1fzb0gcQXhUlOm95Yq6sR4eRpGH99W66IP_M6
+mimmostore.org	TRUE	/	FALSE	1999999999	SameSite	None
+

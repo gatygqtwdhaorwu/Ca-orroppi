@@ -1,0 +1,11 @@
+HTTrack3.49-15 launched on Sat, 22 Aug 2026 19:50:00 at https://mimmostore.org/ +*.mimmostore.org/* +mimmostore.org/* +https://mimmostore.org/*
+(httrack https://mimmostore.org/ -O /data/data/com.termux/files/home/mimmostore_full +*.mimmostore.org/* +mimmostore.org/* +https://mimmostore.org/* -s1 )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+
+HTTrack Website Copier/3.49-15 mirror complete in 16 minutes 40 seconds : 195 links scanned, 194 files written (35357672 bytes overall) [4973441 bytes received at 4973 bytes/sec], 33781315 bytes transferred using HTTP compression in 189 files, ratio 9%, 19.5 requests per connection
+(No errors, 0 warnings, 0 messages)
