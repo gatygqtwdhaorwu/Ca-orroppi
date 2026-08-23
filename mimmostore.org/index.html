@@ -1,58 +1,109 @@
-<script>
-// ============================================================
-// MimmoStore FIX — يمنع Next.js من تدمير الصفحة
-// ============================================================
-(function() {
-  'use strict';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta charSet="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="preload" as="image" href="__l5e/assets-v1/dd94fc35-b12f-4f05-93fc-8bd505243901/mimmostore-logo.jpg"/>
+<link rel="stylesheet" href="assets/styles-SKq8QuKE.css" data-precedence="default"/>
+<title>MimmoStore | Sneakers e accessori firmati</title>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="author" content="MimmoStore"/>
+<meta name="description" content="MimmoStore: catalogo aggiornato ogni giorno di sneakers, abbigliamento e accessori delle migliori griffe, con spedizioni in tutto il mondo."/>
+<meta property="og:title" content="MimmoStore | Sneakers e accessori firmati"/>
+<meta property="og:description" content="MimmoStore: catalogo aggiornato ogni giorno di sneakers, abbigliamento e accessori delle migliori griffe, con spedizioni in tutto il mondo."/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="favicon.png" type="image/png"/>
+<link rel="preconnect" href="https://img.szwego.com/" crossorigin="anonymous"/>
+<link rel="dns-prefetch" href="https://img.szwego.com/"/>
+<script defer src="_flock.js" data-proxy-url="/~api/analytics"></script>
+<style>
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--background:#ffffff;--foreground:#0a0a0a;--card:#ffffff;--card-foreground:#0a0a0a;--popover:#ffffff;--popover-foreground:#0a0a0a;--primary:#8b5cf6;--primary-foreground:#ffffff;--secondary:#f4f4f5;--secondary-foreground:#18181b;--muted:#f4f4f5;--muted-foreground:#71717a;--accent:#f4f4f5;--accent-foreground:#18181b;--destructive:#ef4444;--border:#e4e4e7;--input:#e4e4e7;--ring:#8b5cf6;--radius:0.5rem}
+html{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;line-height:1.5;color:var(--foreground);background:var(--background)}
+body{min-height:100vh;background:var(--background)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
 
-  // 1. منع تحميل ملف Next.js المعطل
-  function killBrokenScripts() {
-    var scripts = document.querySelectorAll('script[src*="index-cSd6hS-P"]');
-    scripts.forEach(function(s) { if (s.parentNode) s.parentNode.removeChild(s); });
-    // مراقبة أي إضافة جديدة
-    var obs = new MutationObserver(function(muts) {
-      muts.forEach(function(m) {
-        for (var i = 0; i < m.addedNodes.length; i++) {
-          var n = m.addedNodes[i];
-          if (n.tagName === 'SCRIPT' && n.src && n.src.indexOf('index-cSd6hS-P') !== -1) {
-            if (n.parentNode) n.parentNode.removeChild(n);
-          }
-        }
-      });
-    });
-    obs.observe(document.documentElement, { childList: true, subtree: true });
-  }
+/* ===== HEADER ===== */
+.sticky{position:sticky;top:0;z-index:40;border-bottom:1px solid var(--border);background:rgba(255,255,255,0.95);backdrop-filter:blur(8px)}
+.marquee-wrap{overflow:hidden;border-bottom:1px solid rgba(139,92,246,0.3);background:linear-gradient(to right,var(--background),rgba(139,92,246,0.2),var(--background))}
+.marquee-track{display:flex;padding:6px 0;animation:marquee 25s linear infinite}
+.marquee-track span{white-space:nowrap;padding:0 24px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.18em;color:var(--primary)}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-33.33%)}}
+.header-inner{display:flex;align-items:center;height:56px;max-width:1200px;margin:0 auto;padding:0 12px;gap:8px}
+.cat-btn{display:flex;align-items:center;gap:6px;border-radius:9999px;border:1px solid rgba(139,92,246,0.5);padding:6px 12px;font-size:14px;font-weight:500;color:var(--primary);background:none;cursor:pointer}
+.cat-btn svg{width:16px;height:16px}
+.search-wrap{position:relative;flex:1}
+.search-wrap svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--muted-foreground);pointer-events:none}
+.search-wrap input{height:36px;width:100%;border-radius:9999px;border:1px solid var(--border);background:var(--secondary);padding:0 12px 0 36px;font-size:14px;color:var(--foreground);outline:none}
+.search-wrap input::placeholder{color:var(--muted-foreground)}
+.search-wrap input:focus{border-color:var(--primary)}
+.nav-link{display:none;align-items:center;gap:8px}
+.nav-link.desktop{display:none}
+@media(min-width:640px){
+.nav-link.desktop{display:flex}
+.nav-link.desktop a.shipping{display:flex;align-items:center;border-radius:9999px;border:1px solid rgba(139,92,246,0.5);padding:6px 12px;font-size:12px;font-weight:500;color:var(--primary)}
+.nav-link.desktop a.logo img{width:36px;height:36px;border-radius:50%;object-fit:cover}
+}
+.logo-header-img{width:36px;height:36px;border-radius:50%;object-fit:cover}
+.whatsapp-btn{display:flex;height:36px;align-items:center;gap:6px;border-radius:9999px;border:1px solid rgba(139,92,246,0.5);padding:0 10px;color:var(--primary);cursor:pointer;background:none;font-size:12px;font-weight:500;white-space:nowrap}
+.whatsapp-btn svg{width:16px;height:16px}
+.whatsapp-btn .label{display:none}
+@media(min-width:640px){.whatsapp-btn{padding:0 12px}.whatsapp-btn .label{display:inline}}
 
-  // 2. استخراج بيانات المنتجات من SSR
-  function extractData() {
-    try {
-      if (window.$_TSR && $_TSR.d) return $_TSR.d;
-      var scripts = document.querySelectorAll('script');
-      for (var i = 0; i < scripts.length; i++) {
-        var text = scripts[i].textContent || '';
-        if (text.indexOf('$_TSR') !== -1) {
-          // force-evaluate the TSR
-          var fn = new Function(text + '; return $_TSR.d;');
-          return fn();
-        }
-      }
-    } catch(e) {}
-    return null;
-  }
+/* ===== CATEGORIES ===== */
+.categories{display:flex;gap:8px;padding:12px 16px;overflow-x:auto;scrollbar-width:none;max-width:1200px;margin:0 auto}
+.categories::-webkit-scrollbar{display:none}
+.cat-chip{flex-shrink:0;border-radius:9999px;border:1px solid var(--border);padding:6px 16px;font-size:13px;color:var(--muted-foreground);background:var(--background);cursor:pointer;transition:all 0.15s;white-space:nowrap}
+.cat-chip:hover{border-color:var(--primary);color:var(--primary)}
+.cat-chip.active{background:var(--primary);color:var(--primary-foreground);border-color:var(--primary)}
 
-  killBrokenScripts();
+/* ===== PRODUCT GRID ===== */
+.container{max-width:1200px;margin:0 auto;padding:0 12px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:12px 0}
+@media(min-width:640px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1024px){.grid{grid-template-columns:repeat(4,1fr)}}
+.product-card{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--card);transition:box-shadow 0.2s;cursor:pointer}
+.product-card:hover{box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.product-card .img-wrap{position:relative;aspect-ratio:1;overflow:hidden;background:#fafafa}
+.product-card .img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.3s}
+.product-card:hover .img-wrap img{transform:scale(1.05)}
+.product-card .info{padding:10px 12px}
+.product-card .info .brand{font-size:11px;font-weight:600;text-transform:uppercase;color:var(--primary);letter-spacing:0.05em;margin-bottom:4px}
+.product-card .info .title{font-size:13px;font-weight:500;color:var(--foreground);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.4}
+.product-card .info .price{margin-top:6px;font-size:15px;font-weight:700;color:var(--foreground)}
 
-  // 3. حفظ محتوى root قبل ما React يمسحه
-  var savedHTML = '';
-  var root = document.getElementById('root');
-  if (root) savedHTML = root.innerHTML;
+/* ===== FOOTER ===== */
+footer{display:flex;flex-direction:column;align-items:center;gap:8px;border-top:1px solid var(--border);padding:24px 16px;text-align:center;margin-top:24px}
+footer img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+footer .store-name{font-size:14px;font-weight:600;color:var(--primary)}
+footer .address,footer .sub{font-size:12px;color:var(--muted-foreground)}
+footer a{font-size:12px;font-weight:600;color:var(--primary);text-decoration:underline}
 
-  // 4. بعد تحميل الصفحة، إذا الـ React مسحت المحتوى، نرجعه
-  setTimeout(function() {
-    var root2 = document.getElementById('root');
-    if (root2 && root2.innerHTML.trim() === '') {
-      root2.innerHTML = savedHTML;
-    }
-  }, 2000);
-})();
-</script>
+/* ===== CATEGORY SECTION ===== */
+.section{margin-bottom:8px}
+.section-title{display:flex;align-items:center;justify-content:space-between;padding:16px 4px 8px}
+.section-title h2{font-size:18px;font-weight:700;color:var(--foreground)}
+.section-title span{font-size:13px;color:var(--primary);font-weight:500}
+
+/* ===== HERO BANNER ===== */
+.hero{background:linear-gradient(135deg,#7c3aed,#a78bfa,#7c3aed);border-radius:12px;padding:32px 24px;text-align:center;margin:12px 0;color:white}
+.hero h1{font-size:28px;font-weight:800;margin-bottom:8px}
+.hero p{font-size:14px;opacity:0.9}
+@media(min-width:640px){.hero h1{font-size:36px}}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="sticky">
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>Spedizioni attive in tutto il mondo 🌍</span>
+      <span>Spedizioni attive in tutto il mondo 🌍</span>
+      <span>Spedizioni attive in tutto il mondo 🌍</span>
+      <span>Spedizioni attive in tutto il mondo 🌍</span>
+      <span>Spedizioni attive
