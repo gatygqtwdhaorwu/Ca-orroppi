@@ -5,398 +5,512 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MimmoStore | Sneakers e accessori firmati</title>
 <meta name="description" content="MimmoStore: catalogo aggiornato ogni giorno di sneakers, abbigliamento e accessori delle migliori griffe, con spedizioni in tutto il mondo."/>
+<meta name="author" content="MimmoStore"/>
+<meta property="og:title" content="MimmoStore | Sneakers e accessori firmati"/>
+<meta property="og:description" content="MimmoStore: catalogo aggiornato ogni giorno di sneakers, abbigliamento e accessori delle migliori griffe."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c9fe3bfa20eb88d319c11bb3b18c52e6/id-preview-fe3bc61b--c35cc13a-a499-42bb-b432-18cfbd2aee75.lovable.app-1786939642158.png"/>
 <link rel="icon" href="https://mimmostore.org/favicon.png" type="image/png"/>
 <style>
-:root{--primary:#a16207;--primary-dark:#854d0e;--primary-soft:rgba(161,98,7,.08);--border:#e7e0d3;--bg:#faf8f4;--card:#ffffff;--fg:#1c1917;--muted:#78716c}
+:root{--primary:#a16207;--primary-dark:#854d0e;--primary-soft:rgba(161,98,7,.08);--border:#e7e0d3;--bg:#faf8f4;--card:#ffffff;--fg:#1c1917;--muted:#78716c;--gold-glow:0 0 24px rgba(201,162,39,.35);}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--fg);line-height:1.5}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--fg);line-height:1.5;padding-bottom:20px}
 img{display:block;max-width:100%;height:auto}
 a{color:var(--primary);text-decoration:none}
-.container{max-width:1200px;margin:0 auto;padding:0 16px}
-
-/* ========== MARQUEE ========== */
-.marquee-bar{background:var(--primary);color:#fff;padding:8px 0;overflow:hidden;white-space:nowrap;font-size:14px;font-weight:600}
-.marquee-bar span{display:inline-block;padding-left:100%;animation:marquee 25s linear infinite}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
-
-/* ========== HEADER ========== */
-header{background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;max-width:1200px;margin:0 auto}
-.header-logo{display:flex;align-items:center;gap:10px}
-.header-logo img{width:42px;height:42px;border-radius:50%;object-fit:cover}
-.header-logo span{font-weight:700;font-size:18px;color:var(--fg)}
-.header-nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.header-nav a{padding:6px 14px;border-radius:20px;font-size:14px;font-weight:500;transition:.2s}
-.header-nav a:hover{background:var(--primary-soft)}
-.btn-primary{background:var(--primary)!important;color:#fff!important}
-.btn-primary:hover{background:var(--primary-dark)!important}
-
-/* ========== SEZIONE ORARI ========== */
-.orari{background:var(--card);padding:24px 16px;margin:16px;border-radius:16px;border:1px solid var(--border);max-width:800px;margin-left:auto;margin-right:auto}
-.orari h3{font-size:18px;margin-bottom:12px}
-.orari-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.orari-grid div{background:var(--bg);padding:12px 16px;border-radius:10px}
-.orari-grid strong{display:block;font-size:13px;color:var(--muted)}
-.orari-grid span{font-size:16px;font-weight:600}
-.orari .wa-link{display:inline-block;margin-top:16px;padding:12px 24px;background:#25D366;color:#fff;border-radius:30px;font-weight:600;font-size:15px;transition:.2s}
-.orari .wa-link:hover{background:#1da851}
-
-/* ========== PROMO ========== */
-.promo{max-width:500px;margin:24px auto;padding:0 16px}
-.promo h2{font-size:22px;margin-bottom:8px}
-.promo p{color:var(--muted);font-size:14px;margin-bottom:16px}
-.promo-card{background:var(--card);border-radius:16px;border:1px solid var(--border);overflow:hidden}
-.promo-card img{width:100%;height:200px;object-fit:cover}
-.promo-body{padding:16px}
-.promo-body h3{font-size:20px;margin-bottom:8px}
-.promo-body ul{list-style:none;font-size:14px;color:var(--muted);margin-bottom:12px}
-.promo-body ul li{padding:4px 0}
-.promo-price{font-size:24px;font-weight:700;color:var(--primary);margin-bottom:12px}
-.promo-body .wa-link{display:inline-block;padding:10px 20px;background:var(--primary);color:#fff;border-radius:30px;font-weight:600;font-size:14px}
-
-/* ========== RICERCA ========== */
-.search-bar{max-width:600px;margin:24px auto;padding:0 16px}
-.search-bar input{width:100%;padding:14px 20px;border:2px solid var(--border);border-radius:30px;font-size:16px;outline:none;background:var(--card);transition:.2s}
-.search-bar input:focus{border-color:var(--primary)}
-
-/* ========== PRODOTTI ========== */
-.section-title{text-align:center;font-size:22px;margin:32px 0 16px;padding:0 16px}
-.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px;padding:0 16px;max-width:1200px;margin:0 auto}
-.product-card{background:var(--card);border-radius:14px;border:1px solid var(--border);overflow:hidden;cursor:pointer;transition:.2s}
-.product-card:hover{box-shadow:0 8px 25px rgba(0,0,0,.08);transform:translateY(-3px)}
-.product-card img{width:100%;height:180px;object-fit:cover}
-.product-body{padding:12px 14px}
-.product-body .brand{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
-.product-body h3{font-size:15px;margin:4px 0;font-weight:600}
-.product-body .size{font-size:12px;color:var(--muted)}
-#noResults{text-align:center;padding:40px;color:var(--muted);display:none}
-
-/* ========== CATEGORIE MARCHE ========== */
-.brand-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px;max-width:1000px;margin:16px auto;padding:0 16px}
-.brand-item{background:var(--card);border-radius:12px;border:1px solid var(--border);overflow:hidden;text-align:center;padding:10px;transition:.2s}
-.brand-item:hover{box-shadow:0 4px 15px rgba(0,0,0,.06)}
-.brand-item img{width:100%;height:100px;object-fit:cover;border-radius:8px}
-.brand-item span{display:block;font-size:13px;font-weight:500;margin-top:8px}
-.brand-cat-title{font-size:20px;text-align:center;margin:32px 0 12px;padding:0 16px}
-
-/* ========== SPEDIZIONI ========== */
-.spedizioni{background:var(--card);border-radius:16px;border:1px solid var(--border);padding:24px;margin:32px 16px;max-width:800px;margin-left:auto;margin-right:auto}
-.spedizioni h2{font-size:22px;margin-bottom:16px}
-.sped-step{display:flex;gap:14px;margin-bottom:20px}
-.sped-step .num{width:36px;height:36px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
-.sped-step h4{font-size:15px;margin-bottom:4px}
-.sped-step p{font-size:14px;color:var(--muted)}
-.sped-details{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
-.sped-details div{background:var(--bg);padding:12px 16px;border-radius:10px}
-.sped-details h4{font-size:14px;margin-bottom:6px}
-.sped-details ul{list-style:none;font-size:13px;color:var(--muted)}
-.sped-details ul li{padding:3px 0}
-.wa-link{display:inline-block;margin-top:16px;padding:12px 24px;background:var(--primary);color:#fff;border-radius:30px;font-weight:600;font-size:15px;text-align:center}
-
-/* ========== MAPPA ========== */
-.mappa{max-width:800px;margin:32px auto;padding:0 16px;text-align:center}
-.mappa h2{font-size:22px;margin-bottom:16px}
-.map-box{background:var(--card);border-radius:16px;border:1px solid var(--border);overflow:hidden;padding:24px}
-.map-box iframe{width:100%;height:250px;border:0;border-radius:10px}
-.map-info{margin-top:16px;font-size:14px;color:var(--muted);line-height:1.8}
-.map-info strong{color:var(--fg)}
-.map-links{display:flex;gap:12px;justify-content:center;margin-top:12px}
-.map-links a{padding:10px 20px;border-radius:30px;font-weight:600;font-size:14px}
-.map-links a:first-child{background:var(--primary);color:#fff}
-.map-links a:last-child{background:#25D366;color:#fff}
-
-/* ========== FOOTER ========== */
-footer{background:var(--card);border-top:1px solid var(--border);padding:24px 16px;margin-top:40px;text-align:center}
-footer img{width:50px;height:50px;border-radius:50%;margin:0 auto 10px}
-footer p{font-size:13px;color:var(--muted);margin:4px 0}
-footer a{color:var(--primary);font-weight:500}
-
-/* ========== MODALE ========== */
-.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.65);z-index:999;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
-.modal-overlay.active{display:flex}
-.modal-content{background:var(--card);border-radius:20px;max-width:480px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:modalIn .3s ease}
-@keyframes modalIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
-.modal-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:28px;cursor:pointer;color:var(--muted);z-index:10;line-height:1;padding:4px}
-.modal-close:hover{color:var(--fg)}
-.modal-gallery{position:relative;background:#000;border-radius:20px 20px 0 0;overflow:hidden}
-.modal-gallery img{width:100%;height:320px;object-fit:contain}
-.modal-nav{position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;padding:0 8px;pointer-events:none}
-.modal-nav button{pointer-events:auto;background:rgba(255,255,255,.8);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:.2s;color:#333}
-.modal-nav button:hover{background:#fff}
-.modal-dots{display:flex;justify-content:center;gap:6px;padding:10px 0 6px}
-.modal-dots span{width:8px;height:8px;border-radius:50%;background:#ddd;cursor:pointer;transition:.2s}
-.modal-dots span.on{background:var(--primary);width:24px;border-radius:4px}
-.modal-info{padding:16px 20px 20px}
-.modal-info .brand{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
-.modal-info h2{font-size:20px;margin:4px 0 12px}
-.modal-sizes{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.modal-sizes span{padding:8px 16px;border:2px solid var(--border);border-radius:30px;font-size:14px;cursor:pointer;transition:.2s;font-weight:500}
-.modal-sizes span:hover{border-color:var(--primary)}
-.modal-sizes span.sel{background:var(--primary);color:#fff;border-color:var(--primary)}
-.modal-wa{display:block;padding:14px;background:#25D366;color:#fff;text-align:center;border-radius:30px;font-weight:600;font-size:16px;transition:.2s}
-.modal-wa:hover{background:#1da851}
-
-/* ========== RESPONSIVE ========== */
-@media(max-width:600px){
-.product-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-.product-card img{height:140px}
-.brand-grid{grid-template-columns:repeat(3,1fr);gap:8px}
-.brand-item img{height:70px}
-.orari-grid{grid-template-columns:1fr}
-.sped-details{grid-template-columns:1fr}
-.modal-gallery img{height:240px}
-.modal-content{max-width:100%;border-radius:16px;margin:10px}
-}
+.container{max-width:1152px;margin:0 auto;padding:0 12px}
+/* الشريط البني العلوي — آمن 100% وارتفاعه محدود */
+.marquee-bar{overflow:hidden;background:linear-gradient(90deg,var(--primary-dark),var(--primary),var(--primary-dark));height:30px;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,.2)}
+.marquee-track{display:flex;white-space:nowrap;width:max-content;animation:scroll 18s linear infinite}
+.marquee-track span{padding:0 28px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ffe9b8}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* الهيدر */
+header{position:sticky;top:0;z-index:50;background:rgba(250,248,244,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;gap:8px;height:56px;max-width:1152px;margin:0 auto;padding:0 10px}
+.btn-cat{display:flex;align-items:center;gap:6px;border:1px solid rgba(161,98,7,.5);background:none;color:var(--primary);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.search{flex:1;position:relative;min-width:0}
+.search input{width:100%;height:36px;border-radius:999px;border:1px solid var(--border);background:#f1eee7;padding:0 12px 0 34px;font-size:13px;outline:none;color:var(--fg)}
+.search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:#a8a29e;width:15px;height:15px;pointer-events:none}
+.logo-link{flex-shrink:0}
+.logo-link img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--primary)}
+.wa-btn{display:flex;align-items:center;gap:5px;border:1px solid rgba(161,98,7,.5);color:var(--primary);border-radius:999px;padding:7px 10px;font-size:12px;font-weight:600;white-space:nowrap;flex-shrink:0}
+.wa-btn svg{width:15px;height:15px}
+.hide-sm{display:none}
+@media(min-width:640px){.hide-sm{display:flex}}
+section{padding:20px 10px 0}
+h2.section-title{font-size:16px;font-weight:700;margin:0 0 2px}
+p.section-sub{font-size:12px;color:var(--muted);margin:0 0 12px}
+.hours-card{border:2px solid rgba(161,98,7,.4);background:var(--card);border-radius:16px;padding:16px;margin:0 2px}
+.hours-card h3{color:var(--primary);font-size:14px;margin-bottom:4px}
+.hours-card .sub{font-size:12px;color:var(--muted)}
+.hours-row{display:flex;justify-content:space-between;background:var(--primary-soft);border-radius:10px;padding:8px 12px;margin-top:8px;font-size:13px}
+.hours-row b{color:var(--primary)}
+.hours-note{font-size:12px;color:var(--muted);margin-top:10px}
+.promo-scroll{display:flex;gap:12px;overflow-x:auto;padding:4px 2px 10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.promo-scroll::-webkit-scrollbar{display:none}
+.promo-card{flex:0 0 74vw;max-width:280px;scroll-snap-align:start;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.promo-card.featured{border:2px solid var(--primary);box-shadow:var(--gold-glow)}
+.promo-card img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.promo-body{padding:12px;display:flex;flex-direction:column;flex:1}
+.promo-body h3{font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--primary)}
+.promo-body ul{margin:8px 0;padding:0;list-style:none;flex:1}
+.promo-body li{font-size:13px;color:var(--muted);padding:1px 0}
+.promo-price{font-size:24px;font-weight:800}
+.promo-price small{font-size:11px;font-weight:500;color:var(--muted);margin-left:4px}
+.btn-primary{display:block;text-align:center;background:var(--primary);color:#fff!important;border-radius:8px;padding:9px 12px;font-size:13px;font-weight:700;margin-top:10px}
+.store-card{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid rgba(161,98,7,.3);border-radius:12px;padding:12px;margin-top:12px}
+.store-card img{width:56px;height:56px;border-radius:50%;object-fit:cover}
+.store-card .name{font-size:18px;color:var(--primary);font-weight:700}
+.store-card .meta{font-size:12px;color:var(--muted)}
+.warn-box{border:2px solid var(--primary);background:var(--primary-soft);border-radius:16px;padding:18px;text-align:center;margin:12px 0}
+.warn-box .tag{font-size:12px;font-weight:800;text-transform:uppercase;color:var(--primary)}
+.warn-box .big{font-size:22px;font-weight:800;color:var(--primary);margin:6px 0}
+.warn-box p{font-size:13px;font-weight:600}
+.warn-box .sub{font-size:12px;color:var(--muted);font-weight:500;margin-top:4px}
+/* شبكة المنتجات */
+.product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:640px){.product-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1024px){.product-grid{grid-template-columns:repeat(4,1fr)}}
+.product-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.product-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.08);border-color:rgba(161,98,7,.4)}
+.product-card img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.product-body{padding:10px;display:flex;flex-direction:column;flex:1}
+.product-body .brand{font-size:10px;text-transform:uppercase;color:var(--primary);font-weight:800;letter-spacing:.06em}
+.product-body h3{font-size:12px;font-weight:700;line-height:1.35;margin-top:2px;flex:1}
+.product-body .size{font-size:11px;color:var(--muted);margin-top:4px}
+#noResults{display:none;text-align:center;color:var(--muted);font-size:13px;padding:20px}
+/* الفئات */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+@media(min-width:640px){.cat-grid{grid-template-columns:repeat(6,1fr)}}
+@media(min-width:1024px){.cat-grid{grid-template-columns:repeat(8,1fr)}}
+.cat-item{display:block;text-align:center}
+.cat-item img{aspect-ratio:1/1;width:100%;object-fit:cover;border-radius:8px;border:1px solid var(--border)}
+.cat-item span{display:block;font-size:10px;color:var(--muted);margin-top:3px;line-height:1.3}
+/* الشحن والخريطة */
+.ship-grid{display:grid;gap:10px}
+@media(min-width:768px){.ship-grid{grid-template-columns:repeat(3,1fr)}}
+.ship-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px}
+.ship-item svg{width:20px;height:20px;color:var(--primary)}
+.ship-item h4{color:var(--primary);font-size:13px;margin:6px 0 2px}
+.ship-item p{font-size:12px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{border:1px solid var(--border);border-radius:999px;padding:4px 10px;font-size:11px;color:var(--muted)}
+.map-frame{min-height:220px;width:100%;border:0;display:block}
+/* الفوتر */
+footer{border-top:1px solid var(--border);text-align:center;padding:28px 12px;margin-top:28px}
+footer img{width:48px;height:48px;border-radius:50%;margin:0 auto 8px;object-fit:cover}
+footer .brand{font-weight:700;color:var(--primary);font-size:14px}
+footer p{font-size:12px;color:var(--muted);margin-top:4px}
 </style>
 </head>
 <body>
 
-<!-- MARQUEE -->
-<div class="marquee-bar"><span>Spedizioni attive in tutto il mondo 🌍 Spedizioni attive in tutto il mondo 🌍 Spedizioni attive in tutto il mondo 🌍</span></div>
+<!-- الشريط البني العلوي — سطر واحد آمن -->
+<div class="marquee-bar"><div class="marquee-track"><span>🌍 Spedizioni attive in tutto il mondo &nbsp;&nbsp;&nbsp;&nbsp;</span><span>🌍 Spedizioni attive in tutto il mondo &nbsp;&nbsp;&nbsp;&nbsp;</span></div></div>
 
-<!-- HEADER -->
+<!-- الهيدر -->
 <header>
-<div class="header-inner">
-<a href="#" class="header-logo">
-<img src="https://mimmostore.org/__l5e/assets-v1/dd94fc35-b12f-4f05-93fc-8bd505243901/mimmostore-logo.jpg" alt="MimmoStore" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23a16207%22/><text x=%2250%22 y=%2265%22 text-anchor=%22middle%22 fill=%22%23fff%22 font-size=%2236%22>M</text></svg>'">
-<span>MimmoStore</span>
-</a>
-<nav class="header-nav">
-<a href="https://wa.me/393510570879" class="btn-primary">WhatsApp</a>
-</nav>
+<div class="container header-inner">
+<button class="btn-cat" onclick="document.getElementById('categorie').scrollIntoView({behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 5h16M4 12h16M4 19h16"/></svg>Categorie</button>
+<div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.34-4.34"/></svg><input id="searchInput" placeholder="Cerca nel catalogo" oninput="filterProducts(this.value)"/></div>
+<a class="hide-sm wa-btn" href="#spedizioni">Spedizioni</a>
+<a class="logo-link" href="#"><img src="https://mimmostore.org/__l5e/assets-v1/dd94fc35-b12f-4f05-93fc-8bd505243901/mimmostore-logo.jpg" alt="MimmoStore"/></a>
+<a class="wa-btn" href="https://wa.me/393510570879" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg><span class="hide-sm">WhatsApp</span></a>
 </div>
 </header>
 
-<!-- ORARI -->
-<div class="orari">
-<h3>🕗 Orari di risposta e assistenza</h3>
-<p style="color:var(--muted);font-size:14px;margin-bottom:14px">Rispondiamo personalmente su WhatsApp per ordini, spedizioni e informazioni.</p>
-<div class="orari-grid">
-<div><strong>Mattina</strong><span>08:00 — 12:00</span></div>
-<div><strong>Pomeriggio e sera</strong><span>17:00 — 00:00</span></div>
-</div>
-<p style="font-size:13px;color:var(--muted);margin-top:12px">Fuori orario puoi comunque scriverci: rispondiamo appena riapriamo.</p>
-<a href="https://wa.me/393510570879" class="wa-link">Scrivici su WhatsApp · +39 351 057 0879</a>
-</div>
+<main class="container">
 
-<!-- PROMO -->
-<div class="promo">
-<h2>Nuove offerte da Mimmo 😍</h2>
-<p>Scorri per vedere tutti i pacchetti e ordina su WhatsApp.</p>
-<div class="promo-card">
-<img src="https://mimmostore.org/__l5e/assets-v1/19efe0ec-ccc4-4b1b-a556-d56f714d8ccc/store-3105.jpg" alt="Promo 100€" loading="lazy" onerror="this.style.display='none'">
+<!-- ساعات الرد -->
+<section>
+<div class="hours-card">
+<h3>🕗 Orari di risposta e assistenza</h3>
+<p class="sub">Rispondiamo personalmente su WhatsApp per ordini, spedizioni e informazioni.</p>
+<div class="hours-row"><span>Mattina</span><b>08:00 — 12:00</b></div>
+<div class="hours-row"><span>Pomeriggio e sera</span><b>17:00 — 00:00</b></div>
+<p class="hours-note">Fuori orario puoi comunque scriverci: rispondiamo appena riapriamo.</p>
+<a class="btn-primary" href="https://wa.me/393510570879" target="_blank" rel="noopener">Scrivici su WhatsApp · +39 351 057 0879</a>
+</div>
+</section>
+
+<!-- العروض -->
+<section>
+<h2 class="section-title">Nuove offerte da Mimmo 😍</h2>
+<p class="section-sub">Scorri per vedere tutti i pacchetti e ordina su WhatsApp.</p>
+<div class="promo-scroll">
+<article class="promo-card">
+<img src="https://mimmostore.org/__l5e/assets-v1/19efe0ec-ccc4-4b1b-a556-d56f714d8ccc/store-3105.jpg" alt="Promo 100€" loading="lazy"/>
 <div class="promo-body">
 <h3>Promo 100€ 🔥</h3>
-<ul>
-<li>• 3 paia di scarpe a scelta</li>
-<li>• Solo articoli fino a € 50</li>
-<li>• € 100 + spedizione DHL € 30</li>
-</ul>
-<div class="promo-price">€100 <span style="font-size:14px;font-weight:400;color:var(--muted)">+ spedizione</span></div>
-<a href="https://wa.me/393510570879?text=Ciao%20MimmoStore!%20Sono%20interessato%20alla%20Promo%20100%E2%82%AC" class="wa-link">Ordina subito su WhatsApp</a>
+<ul><li>3 paia di scarpe a scelta</li><li>Solo articoli fino a € 50</li><li>€ 100 + spedizione DHL € 30</li></ul>
+<p class="promo-price">€100<small>+ spedizione</small></p>
+<a class="btn-primary" href="https://wa.me/393510570879?text=Ciao%20MimmoStore!%20Sono%20interessato%20a%20Promo%20100%E2%82%AC" target="_blank" rel="noreferrer">Ordina su WhatsApp</a>
 </div>
+</article>
+<article class="promo-card featured">
+<img src="https://mimmostore.org/__l5e/assets-v1/c162f712-9543-4ea3-ab6b-955648d11aef/promo-estate.jpg" alt="Promo 200€" loading="lazy"/>
+<div class="promo-body">
+<h3>Promo 200€ ☀️</h3>
+<ul><li>6 paia di scarpe a scelta</li><li>Scelta libera tra le scarpe</li><li>€ 200 + spedizione DHL € 30</li></ul>
+<p class="promo-price">€200<small>+ spedizione</small></p>
+<a class="btn-primary" href="https://wa.me/393510570879?text=Ciao%20MimmoStore!%20Sono%20interessato%20a%20Promo%20200%E2%82%AC" target="_blank" rel="noreferrer">Ordina su WhatsApp</a>
 </div>
+</article>
+<article class="promo-card">
+<img src="https://mimmostore.org/__l5e/assets-v1/b9f2b767-8af1-4b14-8919-ff4441faf421/store-3107.jpg" alt="Promo 300€" loading="lazy"/>
+<div class="promo-body">
+<h3>Promo 300€ 🧨</h3>
+<ul><li>8 paia di scarpe</li><li>5 felpe</li><li>5 jeans</li><li>€ 300 + spedizione DHL € 30</li></ul>
+<p class="promo-price">€300<small>+ spedizione</small></p>
+<a class="btn-primary" href="https://wa.me/393510570879?text=Ciao%20MimmoStore!%20Sono%20interessato%20a%20Promo%20300%E2%82%AC" target="_blank" rel="noreferrer">Ordina su WhatsApp</a>
 </div>
+</article>
+<article class="promo-card">
+<img src="https://mimmostore.org/__l5e/assets-v1/4ef868c8-6c75-421b-9bde-45b6c28defa4/store-3108.jpg" alt="Promo 500€" loading="lazy"/>
+<div class="promo-body">
+<h3>Promo 500€ 😱</h3>
+<ul><li>12 paia di scarpe</li><li>10 felpe</li><li>10 jeans</li><li>€ 500 + spedizione DHL € 30</li></ul>
+<p class="promo-price">€500<small>+ spedizione</small></p>
+<a class="btn-primary" href="https://wa.me/393510570879?text=Ciao%20MimmoStore!%20Sono%20interessato%20a%20Promo%20500%E2%82%AC" target="_blank" rel="noreferrer">Ordina su WhatsApp</a>
+</div>
+</article>
+</div>
+</section>
 
-<!-- RICERCA -->
-<div class="search-bar">
-<input type="text" id="searchInput" placeholder="Cerca per marca o modello..." oninput="filterProducts(this.value)">
+<!-- بطاقة المتجر وتحذير الاحتيال -->
+<section>
+<div class="store-card">
+<img src="https://mimmostore.org/__l5e/assets-v1/dd94fc35-b12f-4f05-93fc-8bd505243901/mimmostore-logo.jpg" alt="MimmoStore"/>
+<div><h1>MimmoStore</h1><p>Novità 11.440 · Totale 5441</p></div>
 </div>
+<a class="btn-primary" href="https://wa.me/393510570879" target="_blank" rel="noopener">Ordina e chiedi info su WhatsApp · +39 351 057 0879</a>
+<div class="warn-box">
+<p class="tag">⚠️ Attenzione alle truffe</p>
+<p class="big">+39 351 057 0879</p>
+<p>è l'UNICO numero ufficiale di MimmoStore per le spedizioni in Italia.</p>
+<p class="sub">Se ricevi il catalogo da un numero diverso è una TRUFFA.</p>
+</div>
+</section>
 
-<!-- SEZIONE: PRODOTTI IN VETRINA -->
-<h2 class="section-title">🔥 Prodotti in vetrina</h2>
-<div id="productGrid" class="product-grid"></div>
-<div id="noResults">Nessun prodotto trovato.</div>
+<!-- المنتجات -->
+<section id="prodotti">
+<h2 class="section-title">🛍️ Prodotti in evidenza</h2>
+<p class="section-sub">Cerca nel catalogo con la barra sopra oppure scorri le categorie qui sotto.</p>
+<div id="noResults">Nessun prodotto trovato. Prova con un altro termine.</div>
+<div class="product-grid" id="productGrid"></div>
+</section>
+<!-- ========== نهاية الجزء الأول ========== -->
+<!-- ========== الجزء الثاني ========== -->
+<!-- الفئات: الماركات -->
+<section id="categorie">
+<h2 class="section-title">🏷️ Categorie</h2>
+<p class="section-sub">Sfoglia per marchio e trova il tuo stile.</p>
+<div class="cat-grid">
+<a class="cat-item" href="categoria/82142254.html"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743174041_3497_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="LV" loading="lazy"/><span>LV</span></a>
+<a class="cat-item" href="categoria/92881556.html"><img src="https://xcimg.szwego.com/normal/db3fc9ae/i1764943783452_4968_1_0.jpg" alt="Dior" loading="lazy"/><span>Dior</span></a>
+<a class="cat-item" href="categoria/82142268.html"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743173243_6646_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Gucci" loading="lazy"/><span>Gucci</span></a>
+<a class="cat-item" href="categoria/82142549.html"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743173286_982_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="McQueen" loading="lazy"/><span>McQueen</span></a>
+<a class="cat-item" href="categoria/82142511.html"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743174083_3530_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Chanel" loading="lazy"/><span>Chanel</span></a>
+<a class="cat-item" href="categoria/82142418.html"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743174231_8108_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Balenciaga" loading="lazy"/><span>Balenciaga</span></a>
+<a class="cat-item" href="categoria/82142576.html"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743175396_1905_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Fendi" loading="lazy"/><span>Fendi</span></a>
+<a class="cat-item" href="categoria/94076786.html"><img src="https://xcimg.szwego.com/normal/db3fc9ae/i1764948911037_9548_1_0.jpg" alt="louboutin" loading="lazy"/><span>louboutin</span></a>
+<a class="cat-item" href="categoria/82142614.html"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743175339_4799_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Burberry" loading="lazy"/><span>Burberry</span></a>
+<a class="cat-item" href="categoria/82142669.html"><img src="https://xcimg.szwego.com/normal/4e551478/i1778588709490_1267_1_0.jpg" alt="Prada" loading="lazy"/><span>Prada</span></a>
+<a class="cat-item" href="categoria/82142956.html"><img src="https://xcimg.szwego.com/normal/4e551478/i1778589584101_3719_1_0.jpg" alt="OFF-WHITE" loading="lazy"/><span>OFF-WHITE</span></a>
+<a class="cat-item" href="categoria/92881558.html"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743174827_2135_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="GGDB" loading="lazy"/><span>GGDB</span></a>
+</div>
+</section>
 
-<!-- CATEGORIE MARCHE -->
-<h2 class="brand-cat-title">👟 Scarpe</h2>
-<div class="brand-grid">
-<a href="https://mimmostore.org/categoria/82072991" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743196670_8631_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Lv Borsa" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Lv Borsa</span></a>
-<a href="https://mimmostore.org/categoria/82072977" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743176335_9017_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Piumino" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Piumino</span></a>
-<a href="https://mimmostore.org/categoria/82072970" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743176285_2904_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Giacca a vento" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Giacca a vento</span></a>
-<a href="https://mimmostore.org/categoria/82072947" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743175959_3567_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Giacca" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Giacca</span></a>
-<a href="https://mimmostore.org/categoria/82072923" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743176169_7454_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Completo" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Completo</span></a>
-<a href="https://mimmostore.org/categoria/82072914" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743175733_6036_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Camicia" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Camicia</span></a>
-<a href="https://mimmostore.org/categoria/82072943" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743175930_3155_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Maglione" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Maglione</span></a>
-<a href="https://mimmostore.org/categoria/82072896" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743175761_2350_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Pantaloncini" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Pantaloncini</span></a>
-<a href="https://mimmostore.org/categoria/82072877" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743175713_459_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Manica corta" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Manica corta</span></a>
+<!-- الفئات: الأحذية -->
+<section>
+<div class="cat-grid">
+<a class="cat-item" href="categoria/82156732.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743185606_2138_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Ciabatte uomo" loading="lazy"/><span>Ciabatte uomo</span></a>
+<a class="cat-item" href="categoria/82715179.html"><img src="https://xcimg.szwego.com/normal/4e551478/i1778588383807_3949_1_0.jpg" alt="Ciabatte donna" loading="lazy"/><span>Ciabatte donna</span></a>
+<a class="cat-item" href="categoria/82156683.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743184123_637_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Tacchi alti" loading="lazy"/><span>Tacchi alti</span></a>
+<a class="cat-item" href="categoria/98620323.html"><img src="https://xcimg.szwego.com/normal/4e551478/i1778591869097_702_1_0.jpg" alt="Ballerine" loading="lazy"/><span>Ballerine</span></a>
+<a class="cat-item" href="categoria/92882901.html"><img src="https://xcimg.szwego.com/20240912/i1726074199_2933_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="MiuMiu" loading="lazy"/><span>MiuMiu</span></a>
+<a class="cat-item" href="categoria/94078270.html"><img src="https://xcimg.szwego.com/img/db3fc9ae/20250405/i1743855616_3120_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Dunk" loading="lazy"/><span>Dunk</span></a>
+<a class="cat-item" href="categoria/94078248.html"><img src="https://xcimg.szwego.com/normal/db3fc9ae/i1764908959420_9376_1_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Air Jordan 1" loading="lazy"/><span>Air Jordan 1</span></a>
+<a class="cat-item" href="categoria/94078254.html"><img src="https://xcimg.szwego.com/normal/db3fc9ae/i1765036742463_2710_1_0.jpg" alt="Air Jordan 4" loading="lazy"/><span>Air Jordan 4</span></a>
+<a class="cat-item" href="categoria/82807792.html"><img src="https://xcimg.szwego.com/img/db3fc9ae/20250405/i1743855089_1792_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Air Force" loading="lazy"/><span>Air Force</span></a>
+<a class="cat-item" href="categoria/82127012.html"><img src="https://xcimg.szwego.com/normal/db3fc9ae/i1764945402338_3928_1_0.jpg" alt="New Balance" loading="lazy"/><span>New Balance</span></a>
+<a class="cat-item" href="categoria/97232887.html"><img src="https://xcimg.szwego.com/normal/4e551478/20260509/a1778316865396_2154.jpg" alt="Yeezy" loading="lazy"/><span>Yeezy</span></a>
+<a class="cat-item" href="categoria/82807898.html"><img src="https://xcimg.szwego.com/img/db3fc9ae/20250405/i1743855176_4469_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Asics" loading="lazy"/><span>Asics</span></a>
 </div>
+</section>
 
-<h2 class="brand-cat-title">🏷️ Grandi Marchi</h2>
-<div class="brand-grid">
-<a href="https://mimmostore.org/categoria/82073057" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743214700_9064_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Loewe" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Loewe</span></a>
-<a href="https://mimmostore.org/categoria/82073041" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743214682_2092_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Fendi" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Fendi</span></a>
-<a href="https://mimmostore.org/categoria/82073035" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743214550_6900_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Bottega Veneta" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Bottega Veneta</span></a>
-<a href="https://mimmostore.org/categoria/82073029" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743214530_6637_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Celine" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Celine</span></a>
-<a href="https://mimmostore.org/categoria/82073023" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743214663_8936_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="YSL" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>YSL</span></a>
-<a href="https://mimmostore.org/categoria/82073018" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743214493_3202_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Gucci" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Gucci</span></a>
-<a href="https://mimmostore.org/categoria/82073011" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743214465_3099_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Hermes" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Hermes</span></a>
-<a href="https://mimmostore.org/categoria/82073000" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743214443_9328_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Dior" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Dior</span></a>
-<a href="https://mimmostore.org/categoria/82072996" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743178878_8146_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Chanel" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Chanel</span></a>
+<!-- الفئات: الملابس -->
+<section>
+<div class="cat-grid">
+<a class="cat-item" href="categoria/82072877.html"><img src="https://xcimg.szwego.com/20240912/i1726075448_3057_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="T-shirt" loading="lazy"/><span>T-shirt</span></a>
+<a class="cat-item" href="categoria/82157072.html"><img src="https://xcimg.szwego.com/normal/4e551478/i1775233694047_3503_1_0.jpg" alt="Polo" loading="lazy"/><span>Polo</span></a>
+<a class="cat-item" href="categoria/82072914.html"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743175733_6036_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Camicia" loading="lazy"/><span>Camicia</span></a>
+<a class="cat-item" href="categoria/92879633.html"><img src="https://xcimg.szwego.com/normal/db3fc9ae/i1764945542401_5140_1_0.jpg" alt="Felpa" loading="lazy"/><span>Felpa</span></a>
+<a class="cat-item" href="categoria/82072896.html"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743175761_2350_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Pantaloncini" loading="lazy"/><span>Pantaloncini</span></a>
+<a class="cat-item" href="categoria/82143599.html"><img src="https://xcimg.szwego.com/img/db3fc9ae/20250401/i1743449668_4936_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Jeans" loading="lazy"/><span>Jeans</span></a>
+<a class="cat-item" href="categoria/82072943.html"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743175930_3155_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Maglione" loading="lazy"/><span>Maglione</span></a>
+<a class="cat-item" href="categoria/82072947.html"><img src="https://xcimg.szwego.com/img/4e551478/20250328/i1743175959_3567_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Giacca" loading="lazy"/><span>Giacca</span></a>
+<a class="cat-item" href="categoria/92975810.html"><img src="https://xcimg.szwego.com/normal/db3fc9ae/i1757945521486_4190_1_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Moncler" loading="lazy"/><span>Moncler</span></a>
+<a class="cat-item" href="categoria/92975474.html"><img src="https://xcimg.szwego.com/normal/4e551478/i1779116978076_1294_1_0.jpg" alt="Canada Goose" loading="lazy"/><span>Canada Goose</span></a>
 </div>
+</section>
 
-<h2 class="brand-cat-title">⌚ Accessori</h2>
-<div class="brand-grid">
-<a href="https://mimmostore.org/categoria/82127008" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743187950_5666_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Collana" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Collana</span></a>
-<a href="https://mimmostore.org/categoria/82156110" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743187999_7607_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Bracciale" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Bracciale</span></a>
-<a href="https://mimmostore.org/categoria/82156531" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743188038_2574_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Orecchini" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Orecchini</span></a>
-<a href="https://mimmostore.org/categoria/92879543" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743187936_9168_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Cappelli" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Cappelli</span></a>
-<a href="https://mimmostore.org/categoria/94080017" class="brand-item"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743188136_9369_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Profumo" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Profumo</span></a>
-<a href="https://mimmostore.org/categoria/98633548" class="brand-item"><img src="https://xcimg.szwego.com/normal/02a9aabc/i1778607848256_5471_1_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Occhiali" loading="lazy" onerror="this.outerHTML='<div style=\"padding:2rem;text-align:center;color:#999\">❌</div>'"><span>Occhiali</span></a>
+<!-- الفئات: الساعات -->
+<section>
+<div class="cat-grid">
+<a class="cat-item" href="categoria/82126847.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743184316_5229_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Rolex" loading="lazy"/><span>Rolex</span></a>
+<a class="cat-item" href="categoria/82126827.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743184365_6984_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Cartier" loading="lazy"/><span>Cartier</span></a>
+<a class="cat-item" href="categoria/82126863.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743184431_1735_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Omega" loading="lazy"/><span>Omega</span></a>
+<a class="cat-item" href="categoria/82126852.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743184653_9590_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Patek Philippe" loading="lazy"/><span>Patek Philippe</span></a>
+<a class="cat-item" href="categoria/82126870.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743184519_2484_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="IWC" loading="lazy"/><span>IWC</span></a>
+<a class="cat-item" href="categoria/82126882.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743184823_7472_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Richard Mille" loading="lazy"/><span>Richard Mille</span></a>
+<a class="cat-item" href="categoria/82126875.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743184614_2293_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Chanel" loading="lazy"/><span>Chanel</span></a>
+<a class="cat-item" href="categoria/82628241.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743184397_3453_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="AP" loading="lazy"/><span>AP</span></a>
 </div>
+</section>
 
-<!-- SPEDIZIONI -->
-<div class="spedizioni" id="spedizioni">
-<h2>🚚 Spedizioni e pagamenti</h2>
-<p style="color:var(--muted);font-size:14px;margin-bottom:16px">Come funziona il tuo ordine da MimmoStore, passo dopo passo.</p>
-<div class="sped-step"><div class="num">1</div><div><h4>Preparazione in 2-3 ore</h4><p>Appena confermi l'ordine prepariamo il pacco, di solito entro 2-3 ore.</p></div></div>
-<div class="sped-step"><div class="num">2</div><div><h4>Spedizione entro 24 ore</h4><p>Spediamo con DHL, spedizione sempre tracciata: partenza entro massimo 24 ore.</p></div></div>
-<div class="sped-step"><div class="num">3</div><div><h4>Consegna in 5-7 giorni</h4><p>Il pacco arriva mediamente in 5-7 giorni, con codice di tracking per seguirlo.</p></div></div>
-<div class="sped-details">
-<div><h4>Costi di spedizione</h4><ul><li>🎁 Pacchetti promo: spedizione DHL tracciata in omaggio</li><li>📦 Pezzi singoli: € 30 di spedizione DHL tracciata</li></ul></div>
-<div><h4>Metodi di pagamento</h4><ul><li>Bonifico bancario</li><li>Carta di credito/debito</li><li>Apple Pay / Google Pay</li></ul></div>
+<!-- الفئات: الحقائب -->
+<section>
+<div class="cat-grid">
+<a class="cat-item" href="categoria/82072991.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743196670_8631_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="LV Borsa" loading="lazy"/><span>LV</span></a>
+<a class="cat-item" href="categoria/82073018.html"><img src="https://xcimg.szwego.com/normal/4e551478/i1779118947282_8891_1_0.jpg" alt="Gucci" loading="lazy"/><span>Gucci</span></a>
+<a class="cat-item" href="categoria/82073000.html"><img src="https://xcimg.szwego.com/normal/4e551478/i1779118886327_3985_1_0.jpg" alt="Dior" loading="lazy"/><span>Dior</span></a>
+<a class="cat-item" href="categoria/82073011.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743214465_3099_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Hermes" loading="lazy"/><span>Hermes</span></a>
+<a class="cat-item" href="categoria/82074972.html"><img src="https://xcimg.szwego.com/normal/4e551478/i1779118358241_5044_1_0.jpg" alt="Miu Miu" loading="lazy"/><span>Miu Miu</span></a>
+<a class="cat-item" href="categoria/82073078.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743214758_9114_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Balenciaga" loading="lazy"/><span>Balenciaga</span></a>
+<a class="cat-item" href="categoria/82073084.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743214774_1125_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Coach" loading="lazy"/><span>Coach</span></a>
 </div>
-<a href="https://wa.me/393510570879" class="wa-link">Ordina su WhatsApp · +39 351 057 0879</a>
-</div>
+</section>
 
-<!-- MAPPA -->
-<div class="mappa">
-<h2>📍 Vieni a trovarci in negozio</h2>
-<div class="map-box">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d34.3!3d27.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDU0JzAwLjAiTiAzNMKwMTgnMDAuMCJF!5e0!3m2!1sit!2sit!4v1" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-<div class="map-info">
-<strong>MimmoStore</strong><br>
-W86C+H3R, El-Salam<br>
-Sharm El Sheikh — South Sinai Governorate 8763015<br>
-Egitto
+<!-- الفئات: الاكسسوارات -->
+<section>
+<div class="cat-grid">
+<a class="cat-item" href="categoria/82127008.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743187950_5666_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Collana" loading="lazy"/><span>Collana</span></a>
+<a class="cat-item" href="categoria/82156110.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743187999_7607_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Bracciale" loading="lazy"/><span>Bracciale</span></a>
+<a class="cat-item" href="categoria/82156531.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743188038_2574_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Orecchini" loading="lazy"/><span>Orecchini</span></a>
+<a class="cat-item" href="categoria/92879543.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743187936_9168_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Cappelli" loading="lazy"/><span>Cappelli</span></a>
+<a class="cat-item" href="categoria/94080017.html"><img src="https://xcimg.szwego.com/img/4e551478/20250329/i1743188136_9369_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Profumo" loading="lazy"/><span>Profumo</span></a>
+<a class="cat-item" href="categoria/98633548.html"><img src="https://xcimg.szwego.com/normal/02a9aabc/i1778607848256_5471_1_0.jpg?imageMogr2/auto-orient/thumbnail/!310x310r/quality/100/format/jpg" alt="Occhiali" loading="lazy"/><span>Occhiali</span></a>
 </div>
-<div class="map-links">
-<a href="https://www.google.com/maps/search/?api=1&query=W86C%2BH3R%20Sharm%20El%20Sheikh" target="_blank">Indicazioni stradali</a>
-<a href="https://wa.me/393510570879" target="_blank">+39 351 057 0879</a>
-</div>
-</div>
-</div>
+</section>
 
-<!-- FOOTER -->
+<!-- الشحن -->
+<section id="spedizioni">
+<h2 class="section-title">🚚 Spedizioni e pagamenti</h2>
+<p class="section-sub">Come funziona il tuo ordine da MimmoStore, passo dopo passo.</p>
+<div class="ship-grid">
+<div class="ship-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 16 2 2 4-4"/><path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14"/></svg><h4>Preparazione in 2-3 ore</h4><p>Appena confermi l'ordine prepariamo il pacco, di solito entro 2-3 ore.</p></div>
+<div class="ship-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg><h4>Spedizione entro 24 ore</h4><p>Spediamo con DHL, spedizione sempre tracciata: partenza entro massimo 24 ore.</p></div>
+<div class="ship-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><h4>Consegna in 5-7 giorni</h4><p>Il pacco arriva mediamente in 5-7 giorni, con codice di tracking per seguirlo.</p></div>
+</div>
+<div style="background:var(--card);border:1px solid rgba(161,98,7,.3);border-radius:12px;padding:14px;margin-top:12px">
+<p style="font-weight:700;color:var(--primary);font-size:13px">Costi di spedizione</p>
+<ul style="margin-top:6px;list-style:none;padding:0;font-size:12px;color:var(--muted)"><li>🎁 Pacchetti promo: spedizione DHL tracciata in omaggio (inclusa nel prezzo).</li><li>📦 Pezzi singoli: € 30 di spedizione DHL tracciata.</li></ul>
+</div>
+<div style="background:var(--card);border:1px solid rgba(161,98,7,.3);border-radius:12px;padding:14px;margin-top:12px">
+<div style="display:flex;align-items:center;gap:8px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" style="color:var(--primary)"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg><p style="font-weight:700;color:var(--primary);font-size:13px">Metodi di pagamento</p></div>
+<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px"><span class="chip">Bonifico bancario</span><span class="chip">Carta di credito/debito</span><span class="chip">Apple Pay</span><span class="chip">Google Pay</span></div>
+<a class="btn-primary" href="https://wa.me/393510570879" target="_blank" rel="noopener">Ordina su WhatsApp · +39 351 057 0879</a>
+</div>
+</section>
+
+<!-- الخريطة -->
+<section>
+<h2 class="section-title">📍 Vieni a trovarci in negozio</h2>
+<div style="background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden">
+<div style="padding:14px;display:flex;gap:10px;align-items:flex-start">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" style="color:var(--primary);flex-shrink:0;margin-top:3px"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+<address style="font-style:normal;font-size:13px;color:var(--muted);line-height:1.7"><span style="font-weight:700;color:var(--primary)">MimmoStore</span><br/>W86C+H3R, El-Salam<br/>Sharm El Sheikh — South Sinai Governorate 8763015<br/>Egitto</address>
+</div>
+<div style="display:flex;gap:8px;padding:0 14px 14px">
+<a href="https://www.google.com/maps/search/?api=1&query=W86C%2BH3R%20Sharm%20El%20Sheikh" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:600;background:var(--primary);color:#fff;text-decoration:none">Indicazioni stradali</a>
+<a href="https://wa.me/393510570879" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:600;border:1px solid rgba(161,98,7,.5);color:var(--primary);text-decoration:none">+39 351 057 0879</a>
+</div>
+<iframe src="https://www.google.com/maps?output=embed&hl=it&z=16&q=W86C%2BH3R%20Sharm%20El%20Sheikh" title="MimmoStore" loading="lazy" class="map-frame"></iframe>
+</div>
+</section>
+
+</main>
+
+<!-- الفوتر -->
 <footer>
-<img src="https://mimmostore.org/__l5e/assets-v1/dd94fc35-b12f-4f05-93fc-8bd505243901/mimmostore-logo.jpg" alt="MimmoStore" onerror="this.style.display='none'">
-<p><strong>MimmoStore</strong></p>
+<img src="https://mimmostore.org/__l5e/assets-v1/dd94fc35-b12f-4f05-93fc-8bd505243901/mimmostore-logo.jpg" alt="MimmoStore"/>
+<p class="brand">MimmoStore</p>
 <p>W86C+H3R, El-Salam, Sharm El Sheikh, South Sinai Governorate 8763015, Egitto</p>
-<p style="color:var(--muted);font-size:12px">Catalogo aggiornato ogni giorno</p>
-<p style="margin-top:12px"><a href="#spedizioni">Spedizioni e pagamenti</a></p>
+<p>Catalogo aggiornato ogni giorno</p>
+<p style="margin-top:6px"><a href="#spedizioni" style="text-decoration:underline;font-weight:600;color:var(--primary)">Spedizioni e pagamenti</a></p>
 </footer>
+<!-- ========== نهاية الجزء الثاني ========== -->
+<!-- ========== الجزء الثالث ========== -->
+<!-- المودال — نافذة المنتج المنبثقة -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Chiudi">✕</button>
+    <div class="modal-gallery">
+      <img id="mImg" src="" alt="Prodotto"/>
+      <button class="g-btn g-prev" onclick="event.stopPropagation();prevImg()" aria-label="Precedente">‹</button>
+      <button class="g-btn g-next" onclick="event.stopPropagation();nextImg()" aria-label="Successiva">›</button>
+      <div class="g-dots" id="mDots"></div>
+    </div>
+    <div class="modal-body">
+      <span class="brand" id="mBrand"></span>
+      <h3 id="mName"></h3>
+      <div style="font-size:12px;color:var(--muted);font-weight:600;margin-top:8px">📏 Scegli la taglia:</div>
+      <div class="sizes" id="mSizes"></div>
+      <a class="modal-wa" id="mWa" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Ordina su WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
 
-<!-- MODALE -->
-<div id="modalOverlay" class="modal-overlay">
-<div class="modal-content" onclick="event.stopPropagation()">
-<button class="modal-close" onclick="closeModal()">&times;</button>
-<div class="modal-gallery">
-<button class="modal-nav-left" onclick="event.stopPropagation();prevImg()" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.8);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;z-index:5;display:flex;align-items:center;justify-content:center;color:#333">&lsaquo;</button>
-<img id="mImg" src="" alt="" style="width:100%;height:320px;object-fit:contain">
-<button class="modal-nav-right" onclick="event.stopPropagation();nextImg()" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.8);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;z-index:5;display:flex;align-items:center;justify-content:center;color:#333">&rsaquo;</button>
-<div id="mDots" class="modal-dots"></div>
-</div>
-<div class="modal-info">
-<div id="mBrand" class="brand"></div>
-<h2 id="mName"></h2>
-<div style="font-size:13px;color:var(--muted);margin-bottom:10px">Seleziona la taglia:</div>
-<div id="mSizes" class="modal-sizes"></div>
-<a id="mWa" href="#" class="modal-wa" target="_blank">Richiedi su WhatsApp</a>
-</div>
-</div>
-</div>
-
+<!-- السكربت -->
 <script>
-// ========== PRODOTTI ==========
-const products=[
-{id:0,brand:"Nike",name:"Air Force 1 Low",imgs:["https://xcimg.szwego.com/normal/4e551478/i1779118856453_7952_1_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg","https://xcimg.szwego.com/normal/4e551478/i1779118856453_7952_1_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"],sizes:[38,39,40,41,42,43,44,45,46],thumb:"https://xcimg.szwego.com/normal/4e551478/i1779118856453_7952_1_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"},
-{id:1,brand:"Nike",name:"Air Jordan 1 Mid",imgs:["https://xcimg.szwego.com/normal/4e551478/i1779121788661_4691_1_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg","https://xcimg.szwego.com/normal/4e551478/i1779121788661_4691_1_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"],sizes:[38,39,40,41,42,43,44,45],thumb:"https://xcimg.szwego.com/normal/4e551478/i1779121788661_4691_1_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"},
-{id:2,brand:"Nike",name:"Air Max 270",imgs:["https://xcimg.szwego.com/normal/4e551478/i1779119874203_8266_1_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg","https://xcimg.szwego.com/normal/4e551478/i1779119874203_8266_1_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"],sizes:[38,39,40,41,42,43,44,45,46],thumb:"https://xcimg.szwego.com/normal/4e551478/i1779119874203_8266_1_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"},
-{id:3,brand:"Nike",name:"Air Force 1 Shadow",imgs:["https://xcimg.szwego.com/normal/4e551478/i1779118947282_8891_1_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg","https://xcimg.szwego.com/normal/4e551478/i1779118947282_8891_1_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"],sizes:[36,37,38,39,40,41,42],thumb:"https://xcimg.szwego.com/normal/4e551478/i1779118947282_8891_1_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"},
-{id:4,brand:"Adidas",name:"Superstar",imgs:["https://xcimg.szwego.com/img/8e48037b/20240727/i1722013702_1144_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg","https://xcimg.szwego.com/img/8e48037b/20240727/i1722013702_1144_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"],sizes:[35,36,37,38,39,40,41,42,43,44,45,46],thumb:"https://xcimg.szwego.com/img/8e48037b/20240727/i1722013702_1144_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"},
-{id:5,brand:"Adidas",name:"Gazelle",imgs:["https://xcimg.szwego.com/normal/4e551478/20260509/a1778316865396_2154.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg","https://xcimg.szwego.com/normal/4e551478/20260509/a1778316865396_2154.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"],sizes:[38,39,40,41,42,43,44,45,46],thumb:"https://xcimg.szwego.com/normal/4e551478/20260509/a1778316865396_2154.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"},
-{id:6,brand:"New Balance",name:"550",imgs:["https://xcimg.szwego.com/normal/db3fc9ae/i1764943783452_4968_1_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg","https://xcimg.szwego.com/normal/db3fc9ae/i1764943783452_4968_1_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"],sizes:[38,39,40,41,42,43,44,45],thumb:"https://xcimg.szwego.com/normal/db3fc9ae/i1764943783452_4968_1_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"}
+// ========== بيانات المنتجات ==========
+const products = [
+{
+  id:1,brand:"Nike",name:"Air Max SC Antracite",
+  imgs:["https://xcimg.szwego.com/img/4e551478/20250405/i1743858144_9555_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg","https://xcimg.szwego.com/img/4e551478/20250405/i1743858144_9555_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg","https://xcimg.szwego.com/img/db3fc9ae/20250405/i1743855089_1792_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg"],
+  sizes:[39,40,41,42,43,44,45],
+  thumb:"https://xcimg.szwego.com/img/4e551478/20250405/i1743858144_9555_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"
+},
+{
+  id:2,brand:"Nike",name:"Air Force 1 '07 Bianco",
+  imgs:["https://xcimg.szwego.com/img/db3fc9ae/20250405/i1743855089_1792_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg","https://xcimg.szwego.com/img/db3fc9ae/20250405/i1743855089_1792_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg","https://xcimg.szwego.com/img/4e551478/20250405/i1743858144_9555_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg"],
+  sizes:[36,37,38,39,40,41,42,43,44,45],
+  thumb:"https://xcimg.szwego.com/img/db3fc9ae/20250405/i1743855089_1792_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"
+},
+{
+  id:3,brand:"New Balance",name:"550 Bianco Rosso Blu",
+  imgs:["https://xcimg.szwego.com/normal/db3fc9ae/i1764945402338_3928_1_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg","https://xcimg.szwego.com/normal/db3fc9ae/i1764945402338_3928_1_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"],
+  sizes:[40,41,42,43,44,45,46],
+  thumb:"https://xcimg.szwego.com/normal/db3fc9ae/i1764945402338_3928_1_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"
+},
+{
+  id:4,brand:"Gucci",name:"Slide GG Marmont",
+  imgs:["https://xcimg.szwego.com/img/4e551478/20250329/i1743185606_2138_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg","https://xcimg.szwego.com/img/4e551478/20250329/i1743185606_2138_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg","https://xcimg.szwego.com/img/4e551478/20250328/i1743173243_6646_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg"],
+  sizes:[38,39,40,41,42,43,44],
+  thumb:"https://xcimg.szwego.com/img/4e551478/20250329/i1743185606_2138_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"
+},
+{
+  id:5,brand:"Louis Vuitton",name:"LV Trainer LOGO",
+  imgs:["https://xcimg.szwego.com/img/d4919494/20250505/i1746382079445_5330_0_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg","https://xcimg.szwego.com/img/d4919494/20250505/i1746382079445_5330_0_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg","https://xcimg.szwego.com/img/4e551478/20250328/i1743174041_3497_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg"],
+  sizes:[35,36,37,38,39,40,41,42],
+  thumb:"https://xcimg.szwego.com/img/d4919494/20250505/i1746382079445_5330_0_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"
+},
+{
+  id:6,brand:"Balenciaga",name:"Runner Demna",
+  imgs:["https://xcimg.szwego.com/img/8e48037b/20240727/i1722013702_1144_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg","https://xcimg.szwego.com/img/8e48037b/20240727/i1722013702_1144_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg","https://xcimg.szwego.com/img/4e551478/20250328/i1743174231_8108_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg"],
+  sizes:[35,36,37,38,39,40,41,42,43,44,45,46],
+  thumb:"https://xcimg.szwego.com/img/8e48037b/20240727/i1722013702_1144_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"
+},
+{
+  id:7,brand:"Adidas",name:"Yeezy 350 V2",
+  imgs:["https://xcimg.szwego.com/normal/4e551478/20260509/a1778316865396_2154.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg","https://xcimg.szwego.com/normal/4e551478/20260509/a1778316865396_2154.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"],
+  sizes:[38,39,40,41,42,43,44,45,46],
+  thumb:"https://xcimg.szwego.com/normal/4e551478/20260509/a1778316865396_2154.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"
+},
+{
+  id:8,brand:"Dior",name:"B23 Hi Low",
+  imgs:["https://xcimg.szwego.com/normal/db3fc9ae/i1764943783452_4968_1_0.jpg?imageMogr2/auto-orient/thumbnail/!420x420r/quality/82/format/jpg","https://xcimg.szwego.com/normal/db3fc9ae/i1764943783452_4968_1_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"],
+  sizes:[38,39,40,41,42,43,44,45],
+  thumb:"https://xcimg.szwego.com/normal/db3fc9ae/i1764943783452_4968_1_0.jpg?imageMogr2/auto-orient/thumbnail/!320x320r/quality/100/format/jpg"
+}
 ];
 
-// ========== STATO ==========
-let filtered=[...products];
-let cur=null;
-let imgIdx=0;
-let selSize=null;
+// ========== الحالة ==========
+let filtered = [...products];
+let cur = null;
+let imgIdx = 0;
+let selSize = null;
 
-// ========== RENDER PRODOTTI ==========
+// ========== عرض المنتجات ==========
 function renderProducts(list){
-filtered=list;
-const grid=document.getElementById('productGrid');
-if(!grid)return;
-grid.innerHTML=list.map((p,i)=>`
-<div class="product-card" onclick="openModal(${i})" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal(${i})}">
-<img src="${p.thumb}" alt="${p.name}" loading="lazy" onerror="this.outerHTML='<div style=\\'padding:2rem;text-align:center;color:var(--muted);font-size:13px\\'>❌</div>'"/>
-<div class="product-body">
-<span class="brand">${p.brand}</span>
-<h3>${p.name}</h3>
-<span class="size">📏 Taglie: ${p.sizes[0]} - ${p.sizes[p.sizes.length-1]}</span>
-</div>
-</div>`).join('');
-const nr=document.getElementById('noResults');
-if(nr)nr.style.display=list.length?'none':'block';
+  filtered = list;
+  const grid = document.getElementById('productGrid');
+  grid.innerHTML = list.map((p,i) => `
+    <div class="product-card" onclick="openModal(${i})" role="button" tabindex="0"
+         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal(${i})}">
+      <img src="${p.thumb}" alt="${p.name}" loading="lazy"
+           onerror="this.outerHTML='<div style=\\'padding:2rem;text-align:center;color:var(--muted);font-size:13px\\'>❌</div>'"/>
+      <div class="product-body">
+        <span class="brand">${p.brand}</span>
+        <h3>${p.name}</h3>
+        <span class="size">📏 Taglie: ${p.sizes[0]} - ${p.sizes[p.sizes.length-1]}</span>
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('noResults').style.display = list.length ? 'none' : 'block';
 }
 
-// ========== RICERCA ==========
+// ========== البحث ==========
 function filterProducts(q){
-const t=(q||'').toLowerCase().trim();
-renderProducts(t?products.filter(p=>p.name.toLowerCase().includes(t)||p.brand.toLowerCase().includes(t)):products);
+  const t = (q||'').toLowerCase().trim();
+  renderProducts(t ? products.filter(p => p.name.toLowerCase().includes(t) || p.brand.toLowerCase().includes(t)) : products);
 }
 
-// ========== MODALE ==========
+// ========== فتح المودال ==========
 function openModal(idx){
-const p=filtered[idx];
-if(!p)return;
-cur=p;imgIdx=0;selSize=p.sizes[0];
-const b=document.getElementById('mBrand');if(b)b.textContent=p.brand;
-const n=document.getElementById('mName');if(n)n.textContent=p.name;
-renderSizes();updateImg();updateWaLink();
-const o=document.getElementById('modalOverlay');if(o)o.classList.add('active');
-document.body.style.overflow='hidden';
+  const p = filtered[idx];
+  if(!p) return;
+  cur = p;
+  imgIdx = 0;
+  selSize = p.sizes[0];
+  document.getElementById('mBrand').textContent = p.brand;
+  document.getElementById('mName').textContent = p.name;
+  renderSizes();
+  updateImg();
+  updateWaLink();
+  document.getElementById('modalOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
+
+// ========== إغلاق المودال ==========
 function closeModal(){
-const o=document.getElementById('modalOverlay');if(o)o.classList.remove('active');
-document.body.style.overflow='';
+  document.getElementById('modalOverlay').classList.remove('active');
+  document.body.style.overflow = '';
 }
+
+// ========== التنقل بين الصور ==========
 function updateImg(){
-if(!cur)return;
-const img=document.getElementById('mImg');if(img){img.src=cur.imgs[imgIdx];img.alt=cur.name+' — foto '+(imgIdx+1);}
-const dots=document.getElementById('mDots');if(dots)dots.innerHTML=cur.imgs.map((_,i)=>'<span class="'+(i===imgIdx?'on':'')+'" onclick="event.stopPropagation();goImg('+i+')"></span>').join('');
+  if(!cur) return;
+  document.getElementById('mImg').src = cur.imgs[imgIdx];
+  document.getElementById('mImg').alt = cur.name + ' — foto ' + (imgIdx+1);
+  document.getElementById('mDots').innerHTML = cur.imgs.map((_,i) => `<span class="${i===imgIdx?'on':''}" onclick="event.stopPropagation();goImg(${i})"></span>`).join('');
 }
 function nextImg(){if(!cur||cur.imgs.length<2)return;imgIdx=(imgIdx+1)%cur.imgs.length;updateImg();}
 function prevImg(){if(!cur||cur.imgs.length<2)return;imgIdx=(imgIdx-1+cur.imgs.length)%cur.imgs.length;updateImg();}
 function goImg(i){if(!cur)return;imgIdx=i;updateImg();}
+
+// ========== المقاسات ==========
 function renderSizes(){
-if(!cur)return;
-const s=document.getElementById('mSizes');if(s)s.innerHTML=cur.sizes.map(sz=>'<span class="'+(sz===selSize?'sel':'')+'" onclick="event.stopPropagation();pickSize('+sz+')">'+sz+'</span>').join('');
+  if(!cur) return;
+  document.getElementById('mSizes').innerHTML = cur.sizes.map(s => `<span class="${s===selSize?'sel':''}" onclick="event.stopPropagation();pickSize(${s})">${s}</span>`).join('');
 }
 function pickSize(s){selSize=s;renderSizes();updateWaLink();}
+
+// ========== رابط واتساب ==========
 function updateWaLink(){
-if(!cur)return;
-const msg='Ciao MimmoStore! Sono interessato a: '+cur.name+' ('+cur.brand+') — Taglia: '+selSize;
-const wa=document.getElementById('mWa');if(wa)wa.href='https://wa.me/393510570879?text='+encodeURIComponent(msg);
+  if(!cur) return;
+  const msg = `Ciao MimmoStore! Sono interessato a: ${cur.name} (${cur.brand}) — Taglia: ${selSize}`;
+  document.getElementById('mWa').href = 'https://wa.me/393510570879?text=' + encodeURIComponent(msg);
 }
 
-// ========== EVENT LISTENERS ==========
-document.addEventListener('DOMContentLoaded',function(){
-const o=document.getElementById('modalOverlay');
-if(o)o.addEventListener('click',function(e){if(e.target===this)closeModal();});
-renderProducts(products);
+// ========== إغلاق المودال بالضغط خارج المحتوى ==========
+document.getElementById('modalOverlay').addEventListener('click', function(e){if(e.target===this)closeModal();});
+
+// ========== إغلاق بـ ESC + تنقل بالأسهم ==========
+document.addEventListener('keydown', function(e){
+  const open = document.getElementById('modalOverlay').classList.contains('active');
+  if(!open) return;
+  if(e.key === 'Escape') closeModal();
+  if(e.key === 'ArrowRight') nextImg();
+  if(e.key === 'ArrowLeft') prevImg();
 });
 
-document.addEventListener('keydown',function(e){
-const o=document.getElementById('modalOverlay');
-if(!o||!o.classList.contains('active'))return;
-if(e.key==='Escape')closeModal();
-if(e.key==='ArrowRight')nextImg();
-if(e.key==='ArrowLeft')prevImg();
-});
+// ========== التحميل الأولي ==========
+renderProducts(products);
 </script>
 
 </body>
